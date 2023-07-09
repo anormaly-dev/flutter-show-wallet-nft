@@ -6,17 +6,5 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-* create alchemy account to use for nft apis
-* 
+1. create alchemy account to use for nft apis and set your own url in `alchemy_client_service.dart`
+2. run command `flutter pub run build_runner build --delete-conflicting-outputs`
