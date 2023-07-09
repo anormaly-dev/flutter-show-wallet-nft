@@ -1,6 +1,6 @@
 # flutter_show_wallet_nft
 
-A new Flutter project.
+This project shows nft list by wallet address. Or connects with metamask account, to show the nft owned.
 
 * flutter > 3.10.5
 
