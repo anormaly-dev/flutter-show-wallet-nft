@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_show_wallet_nft/alchemy_client_service.dart';
+
+import 'model/nft_model.dart';
 
 class NftListScreen extends StatefulWidget {
   NftListScreen({Key? key}) : super(key: key);
@@ -9,6 +12,7 @@ class NftListScreen extends StatefulWidget {
 }
 
 class _NftListScreenState extends State<NftListScreen> {
+  String? walletAddress;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +20,22 @@ class _NftListScreenState extends State<NftListScreen> {
       appBar: AppBar(
         title: const Text('NFT list'),
       ),
-      body: const SizedBox(),
+      body: _future(context),
+    );
+  }
 
+  Widget _future(BuildContext context) {
+    return FutureBuilder(
+      future: AlchemyClientService().request(context, walletAddress!),
+      builder: (
+          BuildContext context,
+          AsyncSnapshot<List<Nft>> snapshot,
+          ) {
+        if (snapshot.hasData) {
+          // return _nftList(snapshot.data as List<Nft>);
+        }
+        return const Text('No NFT');
+      },
     );
   }
 }
